@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table  table-striped" >
+               <thead>
+                <tr>  <th>code</th><th>Nom</th><th>cin</th><th>Date Création</th></tr>
+               </thead>
+               <tbody *ngFor="let client of clients">
+   
+                   <tr >
+                       <td>{{client.codeClient}}</td>
+                       <td>{{client.nomClient}}</td>
+                       <td>{{client.cinClient}}</td>
+                       <td>{{client.dateCreation |  date:'dd/MM/yyyy' }}</td>
+                       <td><a class="btn btn-danger" (click)="supprimerClient(client)">Supprimer</a></td>
+                       <td><a class="btn btn-success" [routerLink]="['/updateClient',client.codeClient]">Modifier</a></td>
+                   </tr>
+               </tbody>
+   
+           </table>
+       </div>
+   </div>
+</div>

@@ -1,0 +1,41 @@
+<div  class="container">
+    <div>
+    <h2> Modifier  un  Client  :</h2>
+    </div>
+    <form >
+    
+          <div  class="col-sm-2  col-md-2  col-lg-2">
+              <label  >Code  Client</label>
+              <input readonly	type="text"  [(ngModel)]="currentClient.codeClient" name="codeClient"  class="form-control">
+           </div>
+        
+    
+        <div  class="col-sm-4  col-md-4  col-lg-4"  >
+              <label  >Nom Client</label>
+              <input	type="text"[(ngModel)]=  "currentClient.nomClient" name="nomClient"  class="form-control">
+        </div>
+        
+    
+         <div  class="col-sm-2  col-md-2  col-lg-2">
+              <label  >Cin Client</label>
+              <input  type="number"	[(ngModel)]=  "currentClient.cinClient" name="cinClient"  class="form-control">
+         </div>
+        
+    
+        <div  class="col-sm-4  col-md-4  col-lg-4">
+             <label  >Date  création</label>
+             <input  type="date"
+            [ngModel]=  "currentClient.dateCreation | date: 'yyyy-MM-dd'" 
+             (ngModelChange)=" currentClient.dateCreation= $event"  
+             name="dateCreation"  class="form-control">
+        </div>
+        
+        
+        <div  class="mt-2">
+            <button  type="submit"  (click)="updateClient()"    class="btn  btn-success">Modifier</button>
+            
+        </div>
+    
+        </form>
+        </div>
+        
